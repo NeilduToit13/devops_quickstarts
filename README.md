@@ -1,6 +1,13 @@
 # devops_quickstarts
 Short scripts for getting started with devops tasks at AfricanLII
 
+# Python Tests Git Hook
+git hooks can be any executable code. Python scripts can therefore be used, provided Python3 is available in /usr/bin/env This allows hooks to be used as an effective CI without the need for external tools like travis/jenkins
+In this example, the hook, along with a short script and testing code are included. The hook will run the tests, and abort the commit if they fail. This hook has also been copied into the git hooks directory for THIS repository, so that they will be run when committing to this repository, as a POC.
+
+
+
+
 # Simple RPC server
 The simple RPC server and client creates and RPC server using python's multiprocessing library.
 This is, in my experience, a much quicker way to plumb between services in cases 

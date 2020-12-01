@@ -1,13 +1,8 @@
-from multiprocessing.managers import BaseManager
-import logging 
+"""Multiprocessing RPC server client quickstart
+"""
 
-# Create a logger
-formatter = logging.Formatter(fmt='%(asctime)s-%(module)s-%(levelname)s ==> %(message)s')
-handler = logging.StreamHandler()
-handler.setFormatter(formatter)
-log = logging.getLogger('root')
-log.setLevel("DEBUG")
-log.addHandler(handler)
+from multiprocessing.managers import BaseManager
+
 
 PORT = 8000
 
@@ -16,8 +11,6 @@ if __name__ == "__main__":
     manager.register('foo')
     manager.connect()
 
-    log.info("Calling foo at the server")
-
+    print("Calling foo at the server")
     result = manager.foo(2,3)
-    
-    log.info(f"result: {result}")
+    print(f"result: {result}")
